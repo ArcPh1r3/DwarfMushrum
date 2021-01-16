@@ -22,7 +22,7 @@ namespace DwarfMushrum.Modules
 
             bodyComponent.name = "DwarfMushrumBody";
             bodyComponent.baseNameToken = "DWARFMUSHRUM_BODY_NAME";
-            bodyComponent.subtitleNameToken = "DWARFMUSHRUM_BODY_SUBTITLE";
+            bodyComponent.subtitleNameToken = "NULL_SUBTITLE";
             bodyComponent.baseMoveSpeed = 0f;
             bodyComponent.baseMaxHealth = 160f;
             bodyComponent.levelMaxHealth = 48f;
@@ -38,6 +38,10 @@ namespace DwarfMushrum.Modules
             sfx.deathSound = "Play_minimushroom_death";
             sfx.fallDamageSound = "";
             sfx.landingSound = "Play_minimushroom_step";
+
+            //death rewards
+            var rewards = bodyPrefab.AddComponent<DeathRewards>();
+            rewards.logUnlockableName = "Logs.MiniMushroom.0";
 
             //
             SetupModel();
