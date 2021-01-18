@@ -9,7 +9,7 @@ namespace DwarfMushrum.States
     public class FireProjectile : BaseSkillState
     {
         public static float baseDuration = 0.1f;
-        public static float damageCoefficient = 2.4f;
+        public static float damageCoefficient = 1.2f;
         public static float force = 10f;
 
         private float duration;

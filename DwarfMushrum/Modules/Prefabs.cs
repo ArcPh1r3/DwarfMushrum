@@ -30,7 +30,7 @@ namespace DwarfMushrum.Modules
             bodyComponent.levelDamage = bodyComponent.baseDamage * 0.2f;
             bodyComponent.isChampion = false;
             bodyComponent.baseJumpCount = 0;
-            //bodyComponent.portraitIcon = Assets.bossPortrait;
+            bodyComponent.portraitIcon = Assets.charPortrait;
 
             //sfx
             var sfx = bodyPrefab.GetComponent<SfxLocator>();
@@ -42,6 +42,14 @@ namespace DwarfMushrum.Modules
             //death rewards
             var rewards = bodyPrefab.AddComponent<DeathRewards>();
             rewards.logUnlockableName = "Logs.MiniMushroom.0";
+
+            //add this so the damn thing can be stunned/frozen
+            var hurtThing = bodyPrefab.AddComponent<SetStateOnHurt>();
+            hurtThing.canBeFrozen = true;
+            hurtThing.canBeHitStunned = true;
+            hurtThing.canBeStunned = true;
+            hurtThing.hitThreshold = 0.1f;
+            hurtThing.hurtState = new SerializableEntityStateType(typeof(EntityStates.HurtState));
 
             //
             SetupModel();

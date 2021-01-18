@@ -30,7 +30,7 @@ namespace DwarfMushrum.Modules
                 }
             }
 
-            //charPortrait = mainAssetBundle.LoadAsset<Sprite>("texDwarfMushrumIcon").texture;
+            charPortrait = mainAssetBundle.LoadAsset<Sprite>("texFuckerIcon").texture;
 
             //iconP = mainAssetBundle.LoadAsset<Sprite>("");
             //icon1 = mainAssetBundle.LoadAsset<Sprite>("");

@@ -11,7 +11,7 @@ namespace DwarfMushrum.States
         public static float burrowDistance = 256f;
         public static float duration = 0.8f;
         public static float delayDuration = 0.4f;
-        public static float exitDuration = 1.25f;
+        public static float exitDuration = 2.5f;
 
         private Transform modelTransform;
         private Vector3 burrowDestination = Vector3.zero;

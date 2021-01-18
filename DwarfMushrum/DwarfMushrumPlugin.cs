@@ -7,7 +7,7 @@ namespace DwarfMushrum
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
-    [BepInPlugin(MODUID, "DwarfMushrum", "1.0.1")]
+    [BepInPlugin(MODUID, "DwarfMushrum", "1.0.2")]
     [R2APISubmoduleDependency(new string[]
     {
         "PrefabAPI",
