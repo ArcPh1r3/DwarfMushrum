@@ -44,7 +44,7 @@ namespace DwarfMushrum.Modules
             rewards.logUnlockableName = "Logs.MiniMushroom.0";
 
             //add this so the damn thing can be stunned/frozen
-            var hurtThing = bodyPrefab.AddComponent<SetStateOnHurt>();
+            var hurtThing = bodyPrefab.GetComponent<SetStateOnHurt>();
             hurtThing.canBeFrozen = true;
             hurtThing.canBeHitStunned = true;
             hurtThing.canBeStunned = true;
