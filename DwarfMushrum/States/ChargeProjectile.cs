@@ -19,13 +19,15 @@ namespace DwarfMushrum.States
             this.duration = ChargeProjectile.baseDuration / this.attackSpeedStat;
             Transform modelTransform = base.GetModelTransform();
 
-            this.playID = Util.PlayScaledSound(EntityStates.MiniMushroom.SporeGrenade.chargeUpSoundString, base.gameObject, this.attackSpeedStat);
+            this.playID = Util.PlayAttackSpeedSound(EntityStates.MiniMushroom.SporeGrenade.chargeUpSoundString, base.gameObject, this.attackSpeedStat);
 
             if (modelTransform)
             {
                 Transform transform = base.FindModelChild("Muzzle");
                 this.chargeVfxInstance = UnityEngine.Object.Instantiate<GameObject>(EntityStates.MiniMushroom.SporeGrenade.chargeEffectPrefab, transform.position, transform.rotation);
                 this.chargeVfxInstance.transform.parent = transform;
+                this.chargeVfxInstance.transform.localPosition = new Vector3(0f, -0.065f, 0f);
+                this.chargeVfxInstance.transform.localRotation = Quaternion.identity;
             }
 
             base.PlayAnimation("FullBody, Override", "ShootSpores", "ShootSpores.playbackRate", this.duration * 2.5f);

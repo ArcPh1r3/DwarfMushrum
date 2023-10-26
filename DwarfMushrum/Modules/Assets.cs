@@ -3,6 +3,7 @@ using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
 using RoR2;
+using System.Collections.Generic;
 
 namespace DwarfMushrum.Modules
 {
@@ -10,13 +11,9 @@ namespace DwarfMushrum.Modules
     {
         public static AssetBundle mainAssetBundle;
 
-        public static Texture charPortrait;
+        internal static List<EffectDef> effectDefs = new List<EffectDef>();
 
-        //public static Sprite iconP;
-        //public static Sprite icon1;
-        //public static Sprite icon2;
-        //public static Sprite icon3;
-        //public static Sprite icon4;
+        public static Texture charPortrait;
 
         public static void PopulateAssets()
         {
@@ -25,20 +22,10 @@ namespace DwarfMushrum.Modules
                 using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("DwarfMushrum.dwarfmushrum"))
                 {
                     mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
-                    var provider = new AssetBundleResourcesProvider("@DwarfMushrum", mainAssetBundle);
-                    ResourcesAPI.AddProvider(provider);
                 }
             }
 
             charPortrait = mainAssetBundle.LoadAsset<Sprite>("texFuckerIcon").texture;
-
-            //iconP = mainAssetBundle.LoadAsset<Sprite>("");
-            //icon1 = mainAssetBundle.LoadAsset<Sprite>("");
-            //icon2 = mainAssetBundle.LoadAsset<Sprite>("");
-            //icon3 = mainAssetBundle.LoadAsset<Sprite>("");
-            //icon4 = mainAssetBundle.LoadAsset<Sprite>("");
-
-            //Shader hotpoo = Resources.Load<Shader>("Shaders/Deferred/hgstandard");
         }
 
         private static GameObject LoadEffect(string resourceName, string soundName)
@@ -55,7 +42,7 @@ namespace DwarfMushrum.Modules
             effect.positionAtReferencedTransform = true;
             effect.soundName = soundName;
 
-            EffectAPI.AddEffect(newEffect);
+            AddNewEffectDef(newEffect, soundName);
 
             return newEffect;
         }
@@ -80,6 +67,23 @@ namespace DwarfMushrum.Modules
             mat.SetFloat("_NormalStrength", normalStrength);
 
             return mat;
+        }
+
+        internal static void AddNewEffectDef(GameObject effectPrefab)
+        {
+            AddNewEffectDef(effectPrefab, "");
+        }
+
+        internal static void AddNewEffectDef(GameObject effectPrefab, string soundName)
+        {
+            EffectDef newEffectDef = new EffectDef();
+            newEffectDef.prefab = effectPrefab;
+            newEffectDef.prefabEffectComponent = effectPrefab.GetComponent<EffectComponent>();
+            newEffectDef.prefabName = effectPrefab.name;
+            newEffectDef.prefabVfxAttributes = effectPrefab.GetComponent<VFXAttributes>();
+            newEffectDef.spawnSoundEventName = soundName;
+
+            effectDefs.Add(newEffectDef);
         }
     }
 }

@@ -6,6 +6,7 @@ using RoR2;
 using RoR2.CharacterAI;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace DwarfMushrum.Modules
 {
@@ -13,6 +14,9 @@ namespace DwarfMushrum.Modules
     {
         public static GameObject bodyPrefab;
         public static GameObject masterPrefab;
+
+        public static List<GameObject> bodyPrefabs = new List<GameObject>();
+        public static List<GameObject> masterPrefabs = new List<GameObject>();
 
         public static void CreatePrefab()
         {
@@ -41,7 +45,7 @@ namespace DwarfMushrum.Modules
 
             //death rewards
             var rewards = bodyPrefab.AddComponent<DeathRewards>();
-            rewards.logUnlockableName = "Logs.MiniMushroom.0";
+            rewards.logUnlockableDef = Addressables.LoadAssetAsync<UnlockableDef>("RoR2/Base/MiniMushroom/Logs.MiniMushroom.0.asset").WaitForCompletion();
 
             //add this so the damn thing can be stunned/frozen
             var hurtThing = bodyPrefab.GetComponent<SetStateOnHurt>();
@@ -63,15 +67,8 @@ namespace DwarfMushrum.Modules
             master.bodyPrefab = bodyPrefab;
             master.isBoss = false;
 
-            BodyCatalog.getAdditionalEntries += delegate (List<GameObject> list)
-            {
-                list.Add(bodyPrefab);
-            };
-
-            MasterCatalog.getAdditionalEntries += delegate (List<GameObject> list)
-            {
-                list.Add(masterPrefab);
-            };
+            bodyPrefabs.Add(bodyPrefab);
+            masterPrefabs.Add(masterPrefab);
         }
 
         private static void CreateAI()
@@ -85,11 +82,11 @@ namespace DwarfMushrum.Modules
             deathDriver.customName = "Burrow";
             deathDriver.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
             deathDriver.moveTargetType = AISkillDriver.TargetType.CurrentEnemy;
-            deathDriver.activationRequiresAimConfirmation = true;
+            deathDriver.activationRequiresAimConfirmation = false;
             deathDriver.activationRequiresTargetLoS = false;
-            deathDriver.selectionRequiresTargetLoS = true;
+            deathDriver.selectionRequiresTargetLoS = false;
             deathDriver.maxDistance = 512f;
-            deathDriver.minDistance = 35f;
+            deathDriver.minDistance = 25f;
             deathDriver.requireSkillReady = true;
             deathDriver.aimType = AISkillDriver.AimType.None;
             deathDriver.ignoreNodeGraph = false;
@@ -238,7 +235,7 @@ namespace DwarfMushrum.Modules
             characterModel.temporaryOverlays = new List<TemporaryOverlay>();
             characterModel.body = bodyPrefab.GetComponent<CharacterBody>();
 
-            characterModel.SetFieldValue("mainSkinnedMeshRenderer", characterModel.baseRendererInfos[0].renderer.gameObject.GetComponent<SkinnedMeshRenderer>());
+            characterModel.mainSkinnedMeshRenderer = characterModel.baseRendererInfos[0].renderer.gameObject.GetComponent<SkinnedMeshRenderer>();
 
             CreateHurtbox(model, bodyPrefab.GetComponent<HealthComponent>(), childLocator);
 

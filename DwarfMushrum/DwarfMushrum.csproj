@@ -14,292 +14,151 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\0Harmony.dll</HintPath>
+      <HintPath>libs\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Assembly-CSharp.dll</HintPath>
+      <HintPath>libs\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\BepInEx.dll</HintPath>
+      <HintPath>libs\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Harmony">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\BepInEx.Harmony.dll</HintPath>
+      <HintPath>libs\BepInEx.Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.MonoMod.Loader">
+      <HintPath>libs\BepInEx.MonoMod.Loader.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx.Preloader">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\BepInEx.Preloader.dll</HintPath>
+      <HintPath>libs\BepInEx.Preloader.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+      <HintPath>libs\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Facepunch.Steamworks">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Facepunch.Steamworks.dll</HintPath>
+      <HintPath>libs\Facepunch.Steamworks.dll</HintPath>
     </Reference>
     <Reference Include="HGCSharpUtils">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\HGCSharpUtils.dll</HintPath>
+      <HintPath>libs\HGCSharpUtils.dll</HintPath>
     </Reference>
     <Reference Include="HGUnityUtils">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\HGUnityUtils.dll</HintPath>
+      <HintPath>libs\HGUnityUtils.dll</HintPath>
     </Reference>
-    <Reference Include="MMHOOK_Assembly-CSharp">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\MMHOOK_Assembly-CSharp.dll</HintPath>
+    <Reference Include="KinematicCharacterController">
+      <HintPath>libs\KinematicCharacterController.dll</HintPath>
+    </Reference>
+    <Reference Include="LegacyResourcesAPI">
+      <HintPath>libs\LegacyResourcesAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_RoR2">
+      <HintPath>libs\MMHOOK_RoR2.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Mono.Cecil.dll</HintPath>
+      <HintPath>libs\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>libs\Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>libs\Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>libs\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Security">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Mono.Security.dll</HintPath>
+    <Reference Include="MonoMod">
+      <HintPath>libs\MonoMod.exe</HintPath>
     </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\MonoMod.RuntimeDetour.dll</HintPath>
+      <HintPath>libs\MonoMod.RuntimeDetour.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\MonoMod.Utils.dll</HintPath>
+      <HintPath>libs\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="R2API">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\R2API.dll</HintPath>
+      <HintPath>libs\R2API.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Core">
+      <HintPath>libs\R2API.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Director">
+      <HintPath>libs\R2API.Director.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Language">
+      <HintPath>libs\R2API.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.LobbyConfig">
+      <HintPath>libs\R2API.LobbyConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Networking">
+      <HintPath>libs\R2API.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Prefab">
+      <HintPath>libs\R2API.Prefab.dll</HintPath>
     </Reference>
     <Reference Include="Rewired_Core">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Rewired_Core.dll</HintPath>
+      <HintPath>libs\Rewired_Core.dll</HintPath>
     </Reference>
     <Reference Include="Rewired_CSharp">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Rewired_CSharp.dll</HintPath>
+      <HintPath>libs\Rewired_CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Rewired_Windows_Lib">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Rewired_Windows_Lib.dll</HintPath>
+    <Reference Include="RiskOfOptions">
+      <HintPath>libs\RiskOfOptions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Configuration">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\System.Configuration.dll</HintPath>
+    <Reference Include="RoR2">
+      <HintPath>libs\RoR2.dll</HintPath>
     </Reference>
-    <Reference Include="System.Diagnostics.StackTrace">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\System.Diagnostics.StackTrace.dll</HintPath>
-    </Reference>
-    <Reference Include="System.EnterpriseServices">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\System.EnterpriseServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization.Extensions">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\System.Globalization.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Internals">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\System.ServiceModel.Internals.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XPath.XDocument">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\System.Xml.XPath.XDocument.dll</HintPath>
+    <Reference Include="Unity.Addressables">
+      <HintPath>libs\Unity.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>libs\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>libs\Unity.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>libs\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.AccessibilityModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AIModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.AnimationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ARModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ARModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.AudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.BaselibModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.BaselibModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClothModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ClothModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ClusterInputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.CrashReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.DirectorModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.FileSystemHttpModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.FileSystemHttpModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.GameCenterModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GridModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.GridModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.HotReloadModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ImageConversionModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.IMGUIModule.dll</HintPath>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>libs\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.JSONSerializeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.LocalizationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.Networking.dll</HintPath>
+      <HintPath>libs\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.PerformanceReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ProfilerModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.ScreenCaptureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.SharedInternalsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.SpriteMaskModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.SpriteShapeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.StreamingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StyleSheetsModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.StyleSheetsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.SubstanceModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TerrainModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TerrainPhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextCoreModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TextCoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TilemapModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Timeline">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TimelineModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TimelineModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TLSModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.TLSModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UmbraModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UNETModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.UNETModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityAnalyticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityTestProtocolModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityTestProtocolModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.VehiclesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VFXModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.VFXModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VideoModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.VRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WindModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.WindModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XRModule">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\UnityEngine.XRModule.dll</HintPath>
+    <Reference Include="VRAPI">
+      <HintPath>libs\VRAPI.dll</HintPath>
     </Reference>
     <Reference Include="Wwise">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Wwise.dll</HintPath>
+      <HintPath>libs\Wwise.dll</HintPath>
     </Reference>
     <Reference Include="Zio">
-      <HintPath>..\..\Direseeker\DireseekerMod\DireseekerMod\bin\Debug\netstandard2.0\Zio.dll</HintPath>
+      <HintPath>libs\Zio.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,8 +1,10 @@
-﻿using R2API;
+﻿using BepInEx.Configuration;
+using R2API;
 using RoR2;
 using RoR2.Navigation;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace DwarfMushrum.Modules
 {
@@ -10,62 +12,67 @@ namespace DwarfMushrum.Modules
     {
         public static CharacterSpawnCard monsterSpawnCard;
 
+        internal static ConfigEntry<int> minimumStageCount;
+        internal static ConfigEntry<int> spawnCost;
+
         public static void CreateSpawnCards()
         {
-            monsterSpawnCard = ScriptableObject.CreateInstance<CharacterSpawnCard>();
-            monsterSpawnCard.name = "cscDwarfMushrum";
-            monsterSpawnCard.prefab = Prefabs.masterPrefab;
-            monsterSpawnCard.sendOverNetwork = true;
-            monsterSpawnCard.hullSize = HullClassification.Human;
-            monsterSpawnCard.nodeGraphType = MapNodeGroup.GraphType.Ground;
-            monsterSpawnCard.requiredFlags = NodeFlags.None;
-            monsterSpawnCard.forbiddenFlags = NodeFlags.None;
-            monsterSpawnCard.directorCreditCost = 27;
-            monsterSpawnCard.occupyPosition = true;
-            monsterSpawnCard.loadout = new SerializableLoadout();
-            monsterSpawnCard.noElites = false;
-            monsterSpawnCard.forbiddenAsBoss = true;
-        }
+            minimumStageCount = DwarfMushrumPlugin.instance.Config.Bind<int>(new ConfigDefinition("Dwarf Mushrum", "Minimum Stage Clear Count"), 0, new ConfigDescription("Number of stages that must be completed before this monster can spawn"));
+            spawnCost = DwarfMushrumPlugin.instance.Config.Bind<int>(new ConfigDefinition("Dwarf Mushrum", "Spawn Cost"), 27, new ConfigDescription("How many director credits does this monster cost"));
 
-        public static void RegisterSpawnCards()
-        {
+            CharacterSpawnCard characterSpawnCard = ScriptableObject.CreateInstance<CharacterSpawnCard>();
+            characterSpawnCard.name = "cscDwarfMushrum";
+            characterSpawnCard.prefab = Prefabs.masterPrefab;
+            characterSpawnCard.sendOverNetwork = true;
+            characterSpawnCard.hullSize = HullClassification.Human;
+            characterSpawnCard.nodeGraphType = MapNodeGroup.GraphType.Ground;
+            characterSpawnCard.requiredFlags = NodeFlags.None;
+            characterSpawnCard.forbiddenFlags = NodeFlags.TeleporterOK;
+            characterSpawnCard.directorCreditCost = spawnCost.Value;
+            characterSpawnCard.occupyPosition = false;
+            characterSpawnCard.loadout = new SerializableLoadout();
+            characterSpawnCard.noElites = false;
+            characterSpawnCard.forbiddenAsBoss = false;
+
             DirectorCard card = new DirectorCard
             {
-                spawnCard = monsterSpawnCard,
+                spawnCard = characterSpawnCard,
                 selectionWeight = 1,
-                allowAmbushSpawn = false,
                 preventOverhead = false,
-                minimumStageCompletions = 0,
-                requiredUnlockable = "",
-                forbiddenUnlockable = "",
-                spawnDistance = DirectorCore.MonsterSpawnDistance.Far
+                minimumStageCompletions = minimumStageCount.Value,
+                spawnDistance = DirectorCore.MonsterSpawnDistance.Standard
             };
 
-            DirectorAPI.DirectorCardHolder monsterCard = new DirectorAPI.DirectorCardHolder
+            DirectorAPI.DirectorCardHolder spawnCard = new DirectorAPI.DirectorCardHolder
             {
                 Card = card,
                 MonsterCategory = DirectorAPI.MonsterCategory.BasicMonsters,
-                InteractableCategory = DirectorAPI.InteractableCategory.None
             };
 
-            DirectorAPI.MonsterActions += delegate (List<DirectorAPI.DirectorCardHolder> list, DirectorAPI.StageInfo stage)
+            DirectorCard cardLoop = new DirectorCard
             {
-                if (stage.stage == DirectorAPI.Stage.SkyMeadow || stage.stage == DirectorAPI.Stage.DistantRoost || stage.stage == DirectorAPI.Stage.WetlandAspect || stage.stage == DirectorAPI.Stage.VoidCell)
-                {
-                    if (!list.Contains(monsterCard))
-                    {
-                        list.Add(monsterCard);
-                    }
-                }
-
-                if (stage.stage == DirectorAPI.Stage.Custom && stage.CustomStageName == "rootjungle")
-                {
-                    if (!list.Contains(monsterCard))
-                    {
-                        list.Add(monsterCard);
-                    }
-                }
+                spawnCard = characterSpawnCard,
+                selectionWeight = 1,
+                preventOverhead = false,
+                minimumStageCompletions = 5,
+                spawnDistance = DirectorCore.MonsterSpawnDistance.Far
             };
+
+            DirectorAPI.DirectorCardHolder spawnCardLoop = new DirectorAPI.DirectorCardHolder
+            {
+                Card = cardLoop,
+                MonsterCategory = DirectorAPI.MonsterCategory.BasicMonsters,
+            };
+
+            DirectorCardCategorySelection dissonanceSpawns = Addressables.LoadAssetAsync<DirectorCardCategorySelection>("RoR2/Base/MixEnemy/dccsMixEnemy.asset").WaitForCompletion();
+            dissonanceSpawns.AddCard(1, card);  //0 is Champions
+
+            foreach (StageSpawnInfo ssi in Config.StageList)
+            {
+                DirectorAPI.DirectorCardHolder toAdd = ssi.GetMinStages() == 0 ? spawnCard : spawnCardLoop;
+
+                DirectorAPI.Helpers.AddNewMonsterToStage(toAdd, false, DirectorAPI.ParseInternalStageName(ssi.GetStageName()), ssi.GetStageName());
+            }
         }
     }
 }
